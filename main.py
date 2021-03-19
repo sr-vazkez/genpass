@@ -29,7 +29,7 @@ def generar_contrasena():
 
 
 def run():
-    c = open('polo2.txt', 'a')#generar un archivo y si ya existe sobre escribir en el
+    c = open('archivo.txt', 'a')#generar un archivo y si ya existe sobre escribir en el
     can_clave = 1000000 #PODRIA SER DATO QUE SE PIDA AL USUARIO
 
     for i in tqdm(range(can_clave)):
