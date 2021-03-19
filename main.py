@@ -2,7 +2,7 @@ import random
 from tqdm import tqdm
 from colorama import Fore, Back, Style
 
-#from time import sleep sleep(0.02)
+#from time import sleep  Ejemplo de uso despues del for sleep(0.02)
 
 def generar_contrasena():
     """generar_contraseña es una funcion que contiene listas 
