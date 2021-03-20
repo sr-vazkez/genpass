@@ -1,8 +1,7 @@
 import random
 from tqdm import tqdm
 from colorama import Fore, Back, Style
-
-#from time import sleep  Ejemplo de uso despues del for sleep(0.02)
+from time import sleep  #Ejemplo de uso despues del for sleep(0.02)
 
 def generar_contrasena():
     """generar_contraseña es una funcion que contiene listas 
@@ -14,10 +13,10 @@ def generar_contrasena():
     """
     mayusculas = ['A', 'B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     minusculas = ['a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    #simbolos = ['!','"','#','$','%','&','/','(',')','=','?','¿']
+    simbolos = ['!','"','#','$','%','&','/','(',')','=','?','¿','¡','¨','*','[',']','{','}','_','-',':',';',',','.','|','^','`','~']
     numeros = ['1','2','3','4','5','6','7','8','9','0']
 
-    caracteres = mayusculas + minusculas + numeros
+    caracteres = mayusculas + minusculas + numeros + simbolos
     contrasena = []
 
     for i in range(10):#Dato dado por el usuario
@@ -29,14 +28,19 @@ def generar_contrasena():
 
 
 def run():
+    print(Fore.RED + 'Espere un momento \n')
+    sleep(0.5)
+    print(Fore.YELLOW + 'Generando Passwords ...')
     c = open('archivo.txt', 'a')#generar un archivo y si ya existe sobre escribir en el
-    can_clave = 1000000 #PODRIA SER DATO QUE SE PIDA AL USUARIO
+    #Buscar soporte para idioma español en la escritura de claves
+    can_clave = 100000 #PODRIA SER DATO QUE SE PIDA AL USUARIO
 
     for i in tqdm(range(can_clave)):
         contrasena = generar_contrasena()
         c.write(contrasena + '\n')
     c.close()
-    print(Fore.RED + 'Proceso Finalizado')
+
+    print(Fore.GREEN + '\nProceso Finalizado Happy Hacking :D')
 
 
 if __name__ == '__main__':
