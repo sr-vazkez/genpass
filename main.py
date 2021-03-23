@@ -3,6 +3,19 @@ from tqdm import tqdm
 from colorama import Fore, Back, Style
 from time import sleep  #Ejemplo de uso despues del for sleep(0.02)
 
+Numero_de_caracteres = input('Ingresa el numero de caracteres que deseas para la contraseña :')
+print("El numero de caracteres es:")
+print(Numero_de_caracteres) 
+
+Numero_de_contrasenas = input('Ingresa el numero de contraseñas a generar:')
+print("se generaran")
+print (Numero_de_contrasenas)
+print("Contraseñas")
+
+a=int(Numero_de_caracteres)
+b=int(Numero_de_contrasenas)
+
+
 def generar_contrasena():
     """generar_contraseña es una funcion que contiene listas 
     Las cuales se unifican en otra lista llamada caracteres
@@ -19,7 +32,7 @@ def generar_contrasena():
     caracteres = mayusculas + minusculas + numeros + simbolos
     contrasena = []
 
-    for i in range(10):#Dato dado por el usuario
+    for i in range(a):#Dato dado por el usuario
         caracter_random = random.choice(caracteres)
         contrasena.append(caracter_random)
 
@@ -33,8 +46,11 @@ def run():
     print(Fore.YELLOW + 'Generando Passwords ...')
     c = open('archivo.txt', 'a')#generar un archivo y si ya existe sobre escribir en el
     #Buscar soporte para idioma español en la escritura de claves
-    can_clave = 100000 #PODRIA SER DATO QUE SE PIDA AL USUARIO
+    can_clave = b #PODRIA SER DATO QUE SE PIDA AL USUARIO
 
+    c.write('\n'+'CONTRASEÑAS GENERADAS'+ '\n')
+    c.write('\n')
+    
     for i in tqdm(range(can_clave)):
         contrasena = generar_contrasena()
         c.write(contrasena + '\n')
