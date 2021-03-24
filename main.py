@@ -3,11 +3,11 @@ from tqdm import tqdm
 from colorama import Fore, Back, Style
 from time import sleep  #Ejemplo de uso despues del for sleep(0.02)
 
-numero_caracteres = int(input('Ingresa el numero de caracteres que deseas para la contraseña :'))
-print("El numero de caracteres es: " + numero_caracteres)
+numero_caracteres = int(input(Fore.GREEN + 'Ingresa el numero de caracteres que deseas para la contraseña :'))
+print("El numero de caracteres es: " + str(numero_caracteres)) #Se casteo o se convirtio la variable
 
-numero_contrasenas = int(input('Ingresa el numero de contraseñas a generar:'))
-print("se generaran "+ numero_contrasenas + "contraseñas" )
+numero_contrasenas = int(input(Fore.YELLOW + 'Ingresa el numero de contraseñas a generar:'))
+print("se generaran contraseñas" + str(numero_contrasenas))
 
 
 
@@ -22,7 +22,7 @@ def generar_contrasena():
     """
     mayusculas = ['A', 'B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     minusculas = ['a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    simbolos = ['!','"','#','$','%','&','/','(',')','=','?','¿','¡','¨','*','[',']','{','}','_','-',':',';',',','.','|','^','`','~']
+    simbolos = ['!','"','#','$','%','&','/','(',')','=','?','*','[',']','{','}','_','-',':',';',',','.','|','^','~']
     numeros = ['1','2','3','4','5','6','7','8','9','0']
 
     caracteres = mayusculas + minusculas + numeros + simbolos
@@ -41,10 +41,8 @@ def run():
     sleep(0.5)
     print(Fore.YELLOW + 'Generando Passwords ...')
     c = open('archivo.txt', 'a')#generar un archivo y si ya existe sobre escribir en el
-    #Buscar soporte para idioma español en la escritura de claves
+    #Buscar soporte para idioma español con simbolos especiales o multi idioma
     can_clave = numero_contrasenas 
-    c.write('\n')
-    
     for i in tqdm(range(can_clave)):
         contrasena = generar_contrasena()
         c.write(contrasena + '\n')
