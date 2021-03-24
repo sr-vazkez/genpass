@@ -10,8 +10,6 @@ numero_contrasenas = int(input(Fore.YELLOW + 'Ingresa el numero de contraseñas 
 print("se generaran contraseñas" + str(numero_contrasenas))
 
 
-
-
 def generar_contrasena():
     """generar_contraseña es una funcion que contiene listas 
     Las cuales se unifican en otra lista llamada caracteres
